@@ -1,0 +1,99 @@
+/*Style Default*/
+#maincontent {
+    width: auto;
+    float: right;
+}
+
+#sidebar {
+    width: auto;
+    float: left;
+}
+
+/* Jika ukuran layar 680px atau kurang dari itu */
+@media screen and (max-width:680px) {
+    #maincontent {
+        width: auto;
+        float: none;
+    }
+
+    #sidebar {
+        width: auto;
+        float: none;
+    }
+}
+
+/* Jika ukuran layar 480px atau kurang dari itu */
+@media screen and (max-width:480px) {
+    #maincontent {
+        width: auto;
+        float: none;
+    }
+
+    #sidebar {
+        display: none;
+    }
+}
+
+
+div {
+    font-family: Poppins;
+}
+
+header {
+    background-color: aqua;
+    height: 100px;
+}
+
+header img {
+    padding: 6px;
+    width: 85px;
+}
+
+header nav {
+    width: 85%;
+    float: left;
+}
+
+header nav h1 {
+    margin: 5px;
+}
+
+header nav ul {
+    float: right;
+    margin-right: 15px;
+}
+
+header nav ul li {
+    float: left;
+    font-size: 16px;
+    margin-left: 16px;
+    display: block;
+}
+
+header nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+header nav ul li a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.flex-container {
+    display: flex;
+    height: 600px;
+    flex-wrap: wrap;
+    align-content: space-between;
+    overflow: scroll;
+    background-color: DodgerBlue;
+}
+
+.flex-container>div {
+    background-color: #f1f1f1;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+}
