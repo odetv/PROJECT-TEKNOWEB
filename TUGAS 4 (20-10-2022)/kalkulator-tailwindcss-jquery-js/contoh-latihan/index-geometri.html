@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<body style="background-color: azure">
+    <!--Deklarasi FormReg dan memanggil funsgi ValidasiForm saat event Submit-->
+    <form action=" formulir.php" method="post" onSubmit="return ValidasiForm()" name="FormReg">
+        <table>
+            <tr>
+                <td>Nama</td>
+                <td>:</td>
+                <td><input type="text" name="nama" value="" placeholder="Tulisakan Nama Anda" />
+                    <br />
+                    <!--Manampung Pesan Error menggunakan DOM ELement-->
+                    <small style="color: red" id="err_nama"></small>
+                </td>
+            </tr>
+            <tr>
+                <td>NIM</td>
+                <td>:</td>
+                <td> <input type="text" name="nim" placeholder="Tulisakan NIM Anda" /><br />
+                    <small style="color: red" id="err_nim"></small>
+                </td>
+            </tr>
+            <tr>
+                <td>Pilih Bangun Datar</td>
+                <td>:</td>
+                <!--Gunakan atribut checked untuk memilih radio-->
+                <td>
+                    <!--Memilih Jenis Ruang, dan memanggil masingmasing fungsi untuk menerapkan DOM pesan-->
+                    <input type="radio" name="bangun" value="Persegi" onclick="persegi()" checked /> Persegi
+                    <input type="radio" name="bangun" value="BelahKetupat" onclick="BelahKetupat()" /> Belah Ket
+                    upat
+                    <input type="radio" name="bangun" value="Segitiga" onclick="Segitiga()" /> Segitiga
+                    <br />
+                    <small style="color: red" id="err_jenis_kelamin"></small>
+                </td>
+            </tr>
+            <tr>
+                <td>Luas Bangun Datar</td>
+                <td>:</td>
+                <td id="nama_bangun">Persegi</td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <hr />
+                </td>
+            </tr>
+            <tr>
+                <td id="par1">Panjang</td>
+                <td>:</td>
+                <!--Menghitung Luas Bangun menggunakan event onkeyup-->
+                <td><input type="number" name="par1" value="" onkeyup="hitung()" placeholder="Ha
+   nya Angka" /></td>
+            </tr>
+            <tr>
+                <td id="par2">Lebar</td>
+                <td>:</td>
+                <td><input type="number" name="par2" value="" onkeyup="hitung()" placeholder="Ha
+   nya Angka" /></td>
+            </tr>
+            <tr>
+                <td>Luas</td>
+                <td>:</td>
+                <td><input type="number" name="hasil" value="" readonly /><br />
+                    <small style="color: red" id="err_hasil"></small>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <hr />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" align="right"><button> simpan</button> </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+<script type="text/javascript">
+    function ValidasiForm() {
+        //form validasi untuk menampilkan pesan jika terdapat inputan yang kosong
+        if (document.FormReg.nama.value == "") {
+            //pesan error ditampilkan menggunakan DOM pada masing2 id
+            document.getElementById("err_nama").innerHTML = "Nama Harus Diisi";
+            return false;
+        } else {
+            document.getElementById("err_nama").innerHTML = "";
+        }
+        if (document.FormReg.nim.value == "") {
+            document.getElementById("err_nim").innerHTML = "Nim Harus Diisi";
+            return false;
+        } else {
+            document.getElementById("err_nim").innerHTML = "";
+        }
+        if (document.FormReg.hasil.value == "") {
+            document.getElementById("err_hasil").innerHTML = "Silakan Isikan Parameter";
+            return false;
+        } else {
+            document.getElementById("err_hasil").innerHTML = "";
+        }
+    }
+    function persegi() {
+        //mengganti tulisan menggunakan DOM pada element id nama_bangun
+        document.getElementById("nama_bangun").innerHTML = "Persegi";
+        document.getElementById("par1").innerHTML = "Panjang";
+        document.getElementById("par2").innerHTML = "Lebar";
+        //memanggil fungsi hitung
+        hitung();
+    }
+    function BelahKetupat() {
+        document.getElementById("nama_bangun").innerHTML = "Belah Ketupat";
+        document.getElementById("par1").innerHTML = "Diameter 1";
+        document.getElementById("par2").innerHTML = "Diameter 2";
+        hitung();
+    }
+    function Segitiga() {
+        document.getElementById("nama_bangun").innerHTML = "Segitiga";
+        document.getElementById("par1").innerHTML = "Alas";
+        document.getElementById("par2").innerHTML = "Tinggi";
+        hitung();
+    }
+    function hitung() {
+        //inisialisasi variabel
+        var hasil = 0;
+        //deklarasi masing-masing paramater
+        //menggunakan parseFLoat untuk merubah tipe data
+        //string pada input text par1 & par2 ke float
+        var par1 = parseFloat(document.FormReg.par1.value);
+        var par2 = parseFloat(document.FormReg.par2.value);
+        //menggunakan switch untuk menghitung sesuai rumus
+        switch (document.FormReg.bangun.value) {
+            case "Persegi":
+                hasil = par1 * par2;
+                break;
+            case "BelahKetupat":
+                hasil = (par1 * par2) / 2;
+                break;
+            case "Segitiga":
+                hasil = (par1 * par2) / 2;
+                break;
+        }
+        //menampilkan hasilnya pada text hasil menggunakan DOM
+        document.FormReg.hasil.value = hasil;
+    }
+</script>
+
+</html>

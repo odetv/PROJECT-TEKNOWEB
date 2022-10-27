@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstr
+ap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container ">
+        <div class="content">
+            <div class="col-lg-8 bg-info">
+                <h1>Form Registrasi</h1>
+                <hr>
+                <form class=" form-horizontal " action=" ">
+                    <div class="form-group ">
+                        <label class="control-label col-sm-3 ">Nama:</label>
+                        <div class="col-sm-9 ">
+                            <input type="text" class="formcontrol " required placeholder="Masukkan Nama " name="nama ">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label col-sm-3 ">NIK:</label>
+                        <div class="col-sm-9 ">
+                            <input type="number" class="formcontrol " required placeholder="Masukkan NIK " name="nik ">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label col-sm-3 ">Email:</label>
+                        <div class="col-sm-9 ">
+                            <input type="email" class="formcontrol " placeholder="Email " name="email ">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label col-sm-3 ">Status Pekerjaan:</label>
+                        <div class="col-sm-9 ">
+                            <select name="status_pekerjaan" class="form-control sp">
+                                <option value=" ">Pilih</option>
+                                <option value="bekerja">Bekerja</option>
+                                <option value="mahasiswa">Mahasiswa</option>
+                                <option value="siswa">Siswa</option>
+                                <option value="tidakbekerja">Tidak Bekerja</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group hide keterangan spo">
+                        <label class="control-label col-sm-3 ket ">Nama Perusahaan :</label>
+                        <div class="col-sm-9 ">
+                            <input type="text" class="formcontrol" name="keterangan" placeholder="Enter password ">
+                        </div>
+                    </div>
+                    <div class="form-group hide ps spo">
+                        <label class="control-label col-sm-3 ">Program Studi:</label>
+                        <div class="col-sm-9 ">
+                            <input type="text" class="formcontrol" name="ps" placeholder="Enter password ">
+                        </div>
+                    </div>
+                    <div class="form-group hide kelas spo">
+                        <label class="control-label col-sm-3 ">Kelas:</label>
+                        <div class="col-sm-9 ">
+                            <input type="text" class="formcontrol" name="kelas" placeholder="Enter password ">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label col-sm-3 ">Password:</label>
+                        <div class="col-sm-9 ">
+                            <input type="password" class="formcontrol psw " placeholder="Enter password ">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label col-sm-3 ">Re Password:</label>
+                        <div class="col-sm-9 ">
+                            <input type="password" class="formcontrol repsw " placeholder="Enter password ">
+                            <small class="errpsw "></small>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <div class="col-sm-offset-2 col-sm-9 ">
+                            <div class="checkbox ">
+                                <label><input type="checkbox" name="remember "> Remember me</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <div class="col-sm-offset-3 col-sm-9 ">
+                            <button type="submit " class="btn btn-default ">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-4 " style="background-color: aliceblue ">
+            </div>
+        </div>
+    </div>
+    <div id="myModal " class="modal fade " role="dialog ">
+        <div class="modal-dialog ">
+            <!-- Modal content-->
+            <div class="modal-content ">
+                <div class="modal-header ">
+                    <button type="button " class="close " datadismiss="modal ">&times;</button>
+                    <h4 class="modal-title ">Berhasil</h4>
+                </div>
+                <div class="modal-body ">
+                    <p></p>
+                </div>
+                <div class="modal-footer ">
+                    <button type="button " class="btn btn-default " datadismiss="modal ">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function () {
+        $(".form-horizontal ").submit(function () {
+            var ps1 = $('.psw').val();
+            var ps2 = $('.repsw').val();
+            var valid = 0;
+            $('.err').html('');
+            if (ps1 == ps2) {
+                valid = 1;
+            } else {
+                $('.errpsw').html('Passsword Tidak Sama');
+            }
+            if (valid == 0) {
+                event.preventDefault();
+            } else {
+                $('p').html("Selamat pendaftaran A.N " + $('input[name="nama "]').val() + "telah berhasil");
+$('.modal').modal('show');
+                event.preventDefault();
+            }
+        });
+        $('.sp').change(function () {
+            $('.spo').addClass('hide');
+            if ($(this).val() == 'bekerja') {
+                $('.keterangan').removeClass('hide');
+                $('.ket').html('Nama Perusahaan');
+            }
+            if ($(this).val() == 'mahasiswa') {
+                $('.keterangan').removeClass('hide');
+                $('.ps').removeClass('hide');
+                $('.kelas').addClass('hide');
+                $('.ket').html('Nama Universitas');
+            }
+            if ($(this).val() == 'siswa') {
+                $('.keterangan').removeClass('hide');
+                $('.kelas').removeClass('hide');
+                $('.ps').addClass('hide');
+                $('.ket').html('Nama Sekolah');
+            }
+        });
+    });
+</script>
+
+</html>
