@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../output.css">
+    <link rel="shortcut icon" href="../img/logo-trivili.png">
+    <title>Trivili | Login</title>
+</head>
+<body>
+    <!-- Login Section Start -->
+    <section id="login" class="pt-36 pb-80 bg-slate-100">
+        <div class="container">
+            <div class="w-full px-4">
+                <div class="mx-auto text-center mb-16">
+                    <h2 class="font-bold text-dark text-2xl mb-2 sm:text-3xl lg:text-4xl">Login</h2>
+                    <p class="text-base text-dark">
+                        Mari mulai kembali perjalanan anda
+                    </p>
+                </div>
+            </div>
+            <form action="login.php" method="post" onSubmit="return ValidasiForm()" name="FormLogin">
+                <div class="w-full lg:w-1/3 lg:mx-auto">
+                    <div class="w-full px-4 mb-8">
+                        <label for="email" class="text-base text-primary ">Email</label>
+                        <input type="email" id="email"
+                            class="w-full text-dark p-3 rounded-md transition duration-300 ease-in-out focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
+                    </div>
+                    <div class="w-full px-4 mb-8">
+                        <label for="password" class="text-base text-primary ">Password</label>
+                        <input type="password" id="password"
+                            class="w-full text-dark p-3 rounded-md transition duration-300 ease-in-out focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
+                    </div>
+                    <div class="w-full px-4">
+                        <button class="text-base text-white bg-primary rounded-md py-3 px-8 w-full hover:shadow-lg hover:opacity-50
+                        transition duration-300 ease-in-out">Login</button>
+                    </div>
+                    <div class="flex flex-row w-full px-4 text-center mt-5 mb-2 justify-center items-center text-dark">
+                        <p class="pr-1">Belum memiliki akun?</p>
+                        <a href="register.html" class="transition duration-300 ease-in-out text-primary font-semibold hover:text-secondary">Register</a>
+                    </div>
+                    <div class="w-full px-4 text-center mt-16 mb-2 text-dark">
+                        <p>Atau login melalui</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center">
+                    <!-- Google -->
+                    <a href="https://google.com" target="_blank"
+                        class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-dark text-dark transition duration-300 ease-in-out hover:bg-primary hover:text-white">
+                        <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Google</title><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+                    </a>
+                    <!-- Facebook -->
+                    <a href="https://facebook.com" target="_blank"
+                    class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-dark text-dark transition duration-300 ease-in-out hover:bg-primary hover:text-white">
+                    <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>Facebook</title>
+                        <path
+                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                    </svg>
+                </a>
+            </form>
+        </div>
+    </section>
+    <!-- Login Section End -->
+</body>
+</html>
