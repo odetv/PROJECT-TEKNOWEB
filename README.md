@@ -1,7 +1,7 @@
 ### PROJECT MATAKULIAH TEKNOLOGI WEB
-<a href="https://github.com/odetv/PROJECT-TEKNOWEB/tree/master/TUGAS%203%20(13-10-2022)/JOBSIDE">Job Side</a><br>
-<a href="https://github.com/odetv/kalkulator-tailwindcss-jquery">Kalkulator Jquery</a><br>
-<a href="https://github.com/odetv/aritmatika-laravel">Aritmatika Laravel</a><br>
+<a href="https://github.com/odetv/PROJECT-TEKNOWEB/tree/master/TUGAS%203%20(13-10-2022)/JOBSIDE">Job Side | Native</a><br>
+<a href="https://github.com/odetv/kalkulator-tailwindcss-jquery">Kalkulator | Jquery</a><br>
+<a href="https://github.com/odetv/aritmatika-laravel">Aritmatika | Laravel</a><br>
 <a href="https://github.com/odetv/trivili-tailwindcss">Trivili | Tailwindcss</a><br>
 <a href="https://github.com/odetv/trivili-laravel">Trivili | Laravel</a>
 
